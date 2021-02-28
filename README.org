@@ -1,0 +1,19 @@
+#+Title: deth2-and-taxes
+
+Helper tool for doing ETH2 taxes. Pull balance over time for a given validator using a beaconchain node's ETH2 API. Optionally fetch prices for each balance change using CryptoCompare (by default, these are not included in the outputted CSV).
+
+** Usage
+
+Compile with chicken scheme compiler:
+
+#+begin_src sh
+csc deth2-and-taxes.scm
+#+end_src
+
+Then run the binary:
+
+#+begin_src sh
+./deth2-and-taxes --validator-index 12345 --granularity 3600 --end-date 2021-01-01 --out-path ./balance-changes.csv 
+#+end_src
+
+The above invocation gets balance changes every hour (3600 second granularity) from genesis block to 2021-01-01 00:00 for validator 12345.
